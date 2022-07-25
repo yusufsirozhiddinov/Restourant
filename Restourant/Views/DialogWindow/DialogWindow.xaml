@@ -1,0 +1,240 @@
+﻿<Window x:Class="Restourant.Views.DialogWindow.DialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Restourant.Views.DialogWindow"
+        xmlns:mt="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:VM="clr-namespace:Restourant.ViewModels"
+        mc:Ignorable="d"
+        Title="{Binding Title_table, UpdateSourceTrigger=PropertyChanged}" Height="1080" Width="1920">
+    <Window.Resources>
+        <Style TargetType="StackPanel">
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#555555">
+            <Button Command="{Binding transition_back}" Background="Transparent" HorizontalAlignment="Left" Margin="20 0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <mt:PackIcon Kind="ArrowLeft" Foreground="White" VerticalAlignment="Center" Height="38" Width="52"/>
+                    <TextBlock Text="Столы" Foreground="White" FontSize="30" FontWeight="DemiBold" VerticalAlignment="Center" Margin="12 0 0 0"/>
+                </StackPanel>
+            </Button>
+            <TextBlock Text="{Binding Title_table, UpdateSourceTrigger=PropertyChanged}" FontSize="40" Foreground="White" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2.3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Margin="0 20 0 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="13*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2.7*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock FontWeight="Bold" HorizontalAlignment="Left" Margin="20 0 0 0" VerticalAlignment="Center" Grid.Column="0" Text="Наименование"/>
+                    <TextBlock FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Text="Кол-во"/>
+                    <TextBlock FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Text="Цена"/>
+                    <TextBlock FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Text="Итого"/>
+                </Grid>
+                <ListBox BorderThickness="0" Grid.Row="1" ItemsSource="{Binding Foods}">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Vertical"/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2.7*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock FontWeight="Bold" HorizontalAlignment="Left" Margin="20 0 0 0" VerticalAlignment="Center" Grid.Column="0" Text="{Binding Name}"/>
+                                <TextBlock FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Text="{Binding Quantity}"/>
+                                <TextBlock FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Text="{Binding Price}"/>
+                                <TextBlock FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Text="{Binding Total_price}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListBoxItem">
+                                        <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                                            BorderThickness="{TemplateBinding BorderThickness}" 
+                                            Background="{TemplateBinding Background}">
+                                            <ContentPresenter />
+                                        </Border>
+
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter Property="Background" Value="Transparent"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                </ListBox>
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Border CornerRadius="5" Height="50" Margin="10 0 10 0">
+                            <Border.Style>
+                                <Style>
+                                    <Setter Property="DocumentViewerBase.Background" Value="#FF1FD91F"/>
+                                </Style>
+                            </Border.Style>
+                            <Button>
+                                <Button.Content>
+                                    <TextBlock Text="Отправить сообщение" FontSize="18" FontWeight="Bold" />
+                                </Button.Content>
+                                <Button.Style>
+                                    <Style>
+                                        <Setter Property="DocumentViewerBase.Background" Value="Transparent"/>
+                                        <Setter Property="DocumentViewerBase.Foreground" Value="#fff"/>
+                                        <Setter Property="DocumentViewerBase.BorderThickness" Value="0"/>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Bold"  Foreground="Gray" Text="Итого" FontSize="15" Margin="50 20 0 0"/>
+                            <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Bold" Foreground="Gray" Text="Бонусы" FontSize="15" Margin="50 0 0 0"/>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" FontWeight="Bold"  Foreground="Black" Text="{Binding Total_price}" FontSize="15" Margin="0 20 0 0"/>
+                            <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold" Foreground="Black" Text="--" FontSize="15" Margin="0 0 0 0"/>
+                        </Grid>
+                        <Grid Grid.Column="2">
+                            <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Bold"  Foreground="Black" Text="К оплате" FontSize="15" Margin="0 20 0 0"/>
+                            <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Bold" Foreground="Black" Text="{Binding Total_price}" FontSize="23" Margin="0 0 0 0"/>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="2" VerticalAlignment="Center" Margin="0 5 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border CornerRadius="5" Background="#FFF0EDED" Width="50" Height="50" VerticalAlignment="Center">
+                            <Button Background="Transparent" FontSize="30" VerticalAlignment="Center">
+                                . . .
+                            </Button>
+                        </Border>
+                        <Border Grid.Column="1" CornerRadius="5" Background="#FFF0EDED" Width="50" Height="50">
+                            <Button Background="Transparent" FontSize="30" VerticalAlignment="Center">
+                                . . .
+                            </Button>
+                        </Border>
+                        <Border Grid.Column="2" CornerRadius="5" Background="#FFF0EDED" Width="50" Height="50">
+                            <Button Background="Transparent"  FontSize="30" VerticalAlignment="Center">
+                                . . .
+                            </Button>
+                        </Border>
+                        <Border CornerRadius="10" Width="190" Height="50" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Border.Style>
+                                <Style>
+                                    <Setter Property="DocumentViewerBase.Background" Value="#FF1FD91F"/>
+                                </Style>
+                            </Border.Style>
+                            <Button>
+                                <Button.Content>
+                                    <TextBlock Text="Оплатить" FontSize="15" FontWeight="Bold" />
+                                </Button.Content>
+                                <Button.Style>
+                                    <Style>
+                                        <Setter Property="DocumentViewerBase.Background" Value="Transparent"/>
+                                        <Setter Property="DocumentViewerBase.Foreground" Value="#fff"/>
+                                        <Setter Property="DocumentViewerBase.BorderThickness" Value="0"/>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="1000" Height="500" Panel.ZIndex="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0">
+                        <Image Source="/Recourses/Images/DialogWindow/first_dish.jpg" Height="100" Stretch="Fill"/>
+                        <TextBlock Text="Первые блюда" Foreground="Black" FontWeight="Thin" Margin="0 0 0 0" Height="30" Padding="10 0 0 0" FontSize="18" Background="White"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="0">
+                        <Image Source="/Recourses/Images/DialogWindow/cold_dish.jpg" Height="100" Stretch="Fill"/>
+                        <TextBlock Text="Холодные закуски" Foreground="Black" FontWeight="Thin" Margin="0 0 0 0" Height="30" Padding="10 0 0 0" FontSize="18" Background="White"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Column="2" Grid.Row="0">
+                        <Image Source="/Recourses/Images/DialogWindow/salat.jpg" Height="100" Stretch="Fill"/>
+                        <TextBlock Text="Салаты" Foreground="Black" FontWeight="Thin" Margin="0 0 0 0" Height="30" Padding="10 0 0 0" FontSize="18" Background="White"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Column="3" Grid.Row="0">
+                        <Image Source="/Recourses/Images/MainWindow/back_photo.jpg" Height="100" Stretch="Fill"/>
+                        <TextBlock Text="Бар" Foreground="Black" FontWeight="Thin" Margin="0 0 0 0" Height="30" Padding="10 0 0 0" FontSize="18" Background="White"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1">
+                        <Button Command="{Binding transition_second}" CommandParameter="{Binding Text, ElementName=second_dishes}" Background="Transparent" BorderThickness="0">
+                            <Image Source="/Recourses/Images/DialogWindow/second_dish.jpg" Height="100" Stretch="Fill"/>
+                        </Button>
+                        <TextBlock x:Name="second_dishes" Text="Вторые блюда" Foreground="Black" FontWeight="Thin" Margin="0 0 0 0" Height="30" Padding="10 0 0 0" FontSize="18" Background="White"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">
+                        <Image Source="/Recourses/Images/DialogWindow/deserts.jpg" Height="100" Stretch="Fill"/>
+                        <TextBlock Text="Десерты" Foreground="Black" FontWeight="Thin" Margin="0 0 0 0" Height="30" Padding="10 0 0 0" FontSize="18" Background="White"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="2">
+                        <Image Source="/Recourses/Images/DialogWindow/breakfast.jpg" Height="100" Stretch="Fill"/>
+                        <TextBlock Text="Завтрак" Foreground="Black" FontWeight="Thin" Margin="0 0 0 0" Height="30" Padding="10 0 0 0" FontSize="18" Background="White"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="2">
+                        <Image Source="/Recourses/Images/business_lunch.jpg" Height="100" Stretch="Fill"/>
+                        <TextBlock Text="Бизнес ланч" Foreground="Black" FontWeight="Thin" Margin="0 0 0 0" Height="30" Padding="10 0 0 0" FontSize="18" Background="White"/>
+                    </StackPanel>
+                </Grid>
+                <Image Source="/Recourses/Images/doska.jpg" Stretch="UniformToFill"/>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Recourses\Images\back_photo.jpg" />
+    <None Remove="Recourses\Images\breakfast.jpg" />
+    <None Remove="Recourses\Images\business_lunch.jpg" />
+    <None Remove="Recourses\Images\ChangeWindow\SecondDishes\chaih_plov_1_1.jpg" />
+    <None Remove="Recourses\Images\ChangeWindow\SecondDishes\polba.jpg" />
+    <None Remove="Recourses\Images\cold_dish.jpg" />
+    <None Remove="Recourses\Images\deserts.jpg" />
+    <None Remove="Recourses\Images\doska.jpg" />
+    <None Remove="Recourses\Images\first_dish.jpg" />
+    <None Remove="Recourses\Images\salat.jpg" />
+    <None Remove="Recourses\Images\second_dish.jpg" />
+    <None Remove="Recourses\Images\table.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Recourses\Images\ChangeWindow\SecondDishes\chaih_plov_1_1.jpg" />
+    <Resource Include="Recourses\Images\ChangeWindow\SecondDishes\polba.jpg" />
+    <Resource Include="Recourses\Images\DialogWindow\breakfast.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.5.0" />
+    <PackageReference Include="MySql.Data" Version="8.0.29" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Recourses\Images\MainWindow\back_photo.jpg" />
+    <Resource Include="Recourses\Images\DialogWindow\business_lunch.jpg" />
+    <Resource Include="Recourses\Images\DialogWindow\cold_dish.jpg" />
+    <Resource Include="Recourses\Images\DialogWindow\deserts.jpg" />
+    <Resource Include="Recourses\Images\DialogWindow\doska.jpg" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Recourses\Fonts\MPLUSRounded1c-Thin.ttf" />
+		<Resource Include="Recourses\Fonts\Pacifico-Regular.ttf" />
+		<Resource Include="Recourses\Images\DialogWindow\first_dish.jpg" />
+		<Resource Include="Recourses\Images\DialogWindow\salat.jpg" />
+		<Resource Include="Recourses\Images\DialogWindow\second_dish.jpg" />
+		<Resource Include="Recourses\Images\MainWindow\table.png" />
+	</ItemGroup>
+</Project>

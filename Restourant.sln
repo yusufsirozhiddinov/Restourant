@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restourant", "Restourant\Restourant.csproj", "{4900CC74-F203-4434-A372-9189B581E5B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlPanelRestourant", "ControlPanelRestourant\ControlPanelRestourant.csproj", "{786A5B25-FCFB-49A3-9CAF-92024283DC46}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4900CC74-F203-4434-A372-9189B581E5B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4900CC74-F203-4434-A372-9189B581E5B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4900CC74-F203-4434-A372-9189B581E5B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4900CC74-F203-4434-A372-9189B581E5B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{786A5B25-FCFB-49A3-9CAF-92024283DC46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{786A5B25-FCFB-49A3-9CAF-92024283DC46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{786A5B25-FCFB-49A3-9CAF-92024283DC46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{786A5B25-FCFB-49A3-9CAF-92024283DC46}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4CC68BCA-343A-457D-9B03-BEC8416CC152}
+	EndGlobalSection
+EndGlobal
