@@ -17,6 +17,7 @@
     <None Remove="Recourses\Images\deserts.jpg" />
     <None Remove="Recourses\Images\doska.jpg" />
     <None Remove="Recourses\Images\first_dish.jpg" />
+    <None Remove="Recourses\Images\MainWindow\table_on.png" />
     <None Remove="Recourses\Images\salat.jpg" />
     <None Remove="Recourses\Images\second_dish.jpg" />
     <None Remove="Recourses\Images\table.png" />
@@ -49,5 +50,6 @@
 		<Resource Include="Recourses\Images\DialogWindow\salat.jpg" />
 		<Resource Include="Recourses\Images\DialogWindow\second_dish.jpg" />
 		<Resource Include="Recourses\Images\MainWindow\table.png" />
+		<Resource Include="Recourses\Images\MainWindow\table_on.png" />
 	</ItemGroup>
 </Project>

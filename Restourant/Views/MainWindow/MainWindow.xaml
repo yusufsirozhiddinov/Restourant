@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Restourant"
         mc:Ignorable="d"
         xmlns:VM="clr-namespace:Restourant.ViewModels"
-        Title="MainWindow" Height="1080" Width="1920" Foreground="#fff">
+        Title="MainWindow" Height="1080" Width="1920" Foreground="#000">
     <Window.DataContext>
         <VM:MainWindowViewModel/>
     </Window.DataContext>
@@ -21,7 +21,6 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-        <Image Source="/Recourses/Images/MainWindow/back_photo.jpg" Stretch="UniformToFill" Grid.RowSpan="3"/>
         <Grid Grid.Row="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
@@ -56,109 +55,109 @@
                 </Grid.RowDefinitions>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Grid.Column="0" Grid.Row="0">
                     <Button Grid.Row="0" Command="{Binding transition}" CommandParameter="{Binding Text, ElementName=table_1}" Background="Transparent" Width="90" Height="90" BorderThickness="0">
-                        <Image Width="90" Height="90" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table.png" />
+                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table_on.png" />
                     </Button>
                     <TextBlock x:Name="table_1" Grid.Row="1" Text="Стол 1" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
                     <Button Command="{Binding transition}" CommandParameter="{Binding Text, ElementName=table_2}" Grid.Row="0" Background="Transparent" Width="90" Height="90" BorderThickness="0">
-                        <Image Width="90" Height="90" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table.png" />
+                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table_on.png" />
                     </Button>
                     <TextBlock x:Name="table_2" Grid.Row="1" Text="Стол 2" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Grid.Column="2" Grid.Row="0">
                     <Button Command="{Binding transition}" CommandParameter="{Binding Text, ElementName=table_3}" Grid.Row="0" Background="Transparent" Width="90" Height="90" BorderThickness="0">
-                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table.png" />
+                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table_on.png" />
                     </Button>
                     <TextBlock x:Name="table_3" Grid.Row="1" Text="Стол 3" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Grid.Column="3" Grid.Row="0">
                     <Button Command="{Binding transition}" CommandParameter="{Binding Text, ElementName=table_4}" Grid.Row="0" Background="Transparent" Width="90" Height="90" BorderThickness="0">
-                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table.png" />
+                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table_on.png" />
                     </Button>
                     <TextBlock x:Name="table_4" Grid.Row="1" Text="Стол 4" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Grid.Column="4" Grid.Row="0">
                     <Button Command="{Binding transition}" CommandParameter="{Binding Text, ElementName=table_5}"  Grid.Row="0" Background="Transparent" Width="90" Height="90" BorderThickness="0">
-                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table.png" />
+                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table_on.png" />
                     </Button>
                     <TextBlock x:Name="table_5" Grid.Row="1" Text="Стол 5" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="False" Orientation="Vertical" Grid.Column="5" Grid.Row="0">
                     <Button Command="{Binding transition}" CommandParameter="{Binding Text, ElementName=table_6}"  Grid.Row="0" Background="Transparent" Width="90" Height="90" BorderThickness="0">
-                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table.png" />
+                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table_on.png" />
                     </Button>
                     <TextBlock x:Name="table_6" Grid.Row="1" Text="Стол 6" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="False" Orientation="Vertical" Grid.Column="0" Grid.Row="1">
                     <Button Command="{Binding transition}" CommandParameter="{Binding Text, ElementName=table_7}"  Grid.Row="0" Background="Transparent" Width="90" Height="90" BorderThickness="0">
-                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table.png" />
+                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table_on.png" />
                     </Button>
                     <TextBlock x:Name="table_7" Grid.Row="1" Text="Стол 7" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="False" Orientation="Vertical" Grid.Column="1" Grid.Row="1">
                     <Button Command="{Binding transition}" CommandParameter="{Binding Text, ElementName=table_8}"  Grid.Row="0" Background="Transparent" Width="90" Height="90" BorderThickness="0">
-                        <Image Width="90" Height="90" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table.png" />
+                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table_on.png" />
                     </Button>
                     <TextBlock x:Name="table_8" Grid.Row="1" Text="Стол 8" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="False" Orientation="Vertical" Grid.Column="2" Grid.Row="1">
                     <Button Command="{Binding transition}" CommandParameter="{Binding Text, ElementName=table_9}" Grid.Row="0" Background="Transparent" Width="90" Height="90" BorderThickness="0">
-                        <Image Width="90" Height="90" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table.png" />
+                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table_on.png" />
                     </Button>
                     <TextBlock x:Name="table_9" Grid.Row="1" Text="Стол 9" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="False" Orientation="Vertical" Grid.Column="3" Grid.Row="1">
                     <Button Command="{Binding transition}" CommandParameter="{Binding Text, ElementName=table_10}"  Grid.Row="0" Background="Transparent" Width="90" Height="90" BorderThickness="0">
-                        <Image Width="90" Height="90" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table.png" />
+                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table_on.png" />
                     </Button>
                     <TextBlock x:Name="table_10" Grid.Row="1" Text="Стол 10" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="False" Orientation="Vertical" Grid.Column="4" Grid.Row="1">
                     <Button Command="{Binding transition}" CommandParameter="{Binding Text, ElementName=table_11}"  Grid.Row="0" Background="Transparent" Width="90" Height="90" BorderThickness="0">
-                        <Image Width="90" Height="90" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table.png" />
+                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table_on.png" />
                     </Button>
                     <TextBlock x:Name="table_11" Grid.Row="1" Text="Стол 11" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="False" Orientation="Vertical" Grid.Column="5" Grid.Row="1">
                     <Button Command="{Binding transition}" CommandParameter="{Binding Text, ElementName=table_12}" Grid.Row="0" Background="Transparent" Width="90" Height="90" BorderThickness="0">
-                        <Image Width="90" Height="90" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table.png" />
+                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table_on.png" />
                     </Button>
                     <TextBlock x:Name="table_12" Grid.Row="1" Text="Стол 12" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="False" Orientation="Vertical" Grid.Column="0" Grid.Row="2">
                     <Button Command="{Binding transition}" CommandParameter="{Binding Text, ElementName=table_13}"  Grid.Row="0" Background="Transparent" Width="90" Height="90" BorderThickness="0">
-                        <Image Width="90" Height="90" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table.png" />
+                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table_on.png" />
                     </Button>
                     <TextBlock x:Name="table_13" Grid.Row="1" Text="Стол 13" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="False" Orientation="Vertical" Grid.Column="1" Grid.Row="2">
                     <Button Command="{Binding transition}" CommandParameter="{Binding Text, ElementName=table_14}"  Grid.Row="0" Background="Transparent" Width="90" Height="90" BorderThickness="0">
-                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table.png" />
+                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table_on.png" />
                     </Button>
                     <TextBlock x:Name="table_14" Grid.Row="1" Text="Стол 14" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="False" Orientation="Vertical" Grid.Column="2" Grid.Row="2">
                     <Button Command="{Binding transition}" CommandParameter="{Binding Text, ElementName=table_15}"  Grid.Row="0" Background="Transparent" Width="90" Height="90" BorderThickness="0">
-                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table.png" />
+                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table_on.png" />
                     </Button>
                     <TextBlock x:Name="table_15" Grid.Row="1" Text="Стол 15" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="False" Orientation="Vertical" Grid.Column="3" Grid.Row="2">
                     <Button Command="{Binding transition}" CommandParameter="{Binding Text, ElementName=table_16}"  Grid.Row="0" Background="Transparent" Width="90" Height="90" BorderThickness="0">
-                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Top" Source="/Recourses/Images/MainWindow/table.png" />
+                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table_on.png" />
                     </Button>
                     <TextBlock x:Name="table_16" Grid.Row="1" Text="Стол 16" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="False" Orientation="Vertical" Grid.Column="4" Grid.Row="2">
                     <Button Command="{Binding transition}" CommandParameter="{Binding Text, ElementName=table_17}"  Grid.Row="0" Background="Transparent" Width="90" Height="90" BorderThickness="0">
-                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table.png" />
+                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table_on.png" />
                     </Button>
                     <TextBlock x:Name="table_17" Grid.Row="1" Text="Стол 17" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="False" Orientation="Vertical" Grid.Column="5" Grid.Row="2">
                     <Button Command="{Binding transition}" CommandParameter="{Binding Text, ElementName=table_18}"  Grid.Row="0" Background="Transparent" Width="90" Height="90" BorderThickness="0">
-                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table.png" />
+                        <Image Width="90" Height="90" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourses/Images/MainWindow/table_on.png" />
                     </Button>
                     <TextBlock x:Name="table_18" Grid.Row="1" Text="Стол 18" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
