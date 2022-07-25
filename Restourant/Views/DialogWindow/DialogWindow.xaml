@@ -7,7 +7,7 @@
         xmlns:mt="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:VM="clr-namespace:Restourant.ViewModels"
         mc:Ignorable="d"
-        Title="{Binding Title_table, UpdateSourceTrigger=PropertyChanged}" Height="1080" Width="1920">
+        Title="Выберите блюда" Height="1080" Width="1920">
     <Window.Resources>
         <Style TargetType="StackPanel">
             <Setter Property="Margin" Value="10"/>

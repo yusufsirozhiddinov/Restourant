@@ -222,11 +222,14 @@ namespace Restourant.ViewModels
 
         private void transition_backCommandExecuted(object obj)
         {
+            Title_table = (string)obj;
             dialogWindow.Show();
             dialogWindowViewModel = new DialogWindowViewModel(dialogWindow);
-            dialogWindow.DataContext = dialogWindowViewModel;
+            dialogWindow.DataContext = dialogWindowViewModel; 
+            dialogWindowViewModel.SetTitle(Title_table);
             changeWindow.Close();
         }
+
 
         private bool transition_backComandExecute(object obj)
         {

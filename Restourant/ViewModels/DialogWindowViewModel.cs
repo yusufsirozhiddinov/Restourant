@@ -96,9 +96,9 @@ namespace Restourant.ViewModels
             return true;
         }
 
-        public void SetTitle(string Title_Table)
+        public void SetTitle(string Title_Table1)
         {
-            Title_table = Title_Table;
+            Title_table = Title_Table1;
         }
     }
 }

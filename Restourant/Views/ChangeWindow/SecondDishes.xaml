@@ -20,13 +20,13 @@
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Background="#555555">
-            <Button Background="Transparent" HorizontalAlignment="Left" Margin="20 0" Command="{Binding transitionBack}">
+            <Button Background="Transparent" HorizontalAlignment="Left" Margin="20 0" Command="{Binding transitionBack}" CommandParameter="{Binding Text, ElementName=title_table}">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                     <mt:PackIcon Kind="ArrowLeft" Foreground="White" VerticalAlignment="Center" Height="38" Width="52"/>
                     <TextBlock Text="Назад" Foreground="White" FontSize="30" FontWeight="DemiBold" VerticalAlignment="Center" Margin="12 0 0 0"/>
                 </StackPanel>
             </Button>
-            <TextBlock Text="{Binding Title_table}" FontSize="40" Foreground="White" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="title_table" Text="{Binding Title_table}" FontSize="40" Foreground="White" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
         <ScrollViewer VerticalScrollBarVisibility="Visible" Grid.Row="1">
             <ListBox ItemsSource="{Binding Foods}">
