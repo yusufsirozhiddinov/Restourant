@@ -20,5 +20,6 @@ namespace Restourant
         }
         public DbSet<Dishes> Dishes { get; set; }
         public DbSet<Chose_Dish> Chose_Dish { get; set; }
+        public DbSet<Tables> Tables { get; set; }
     }
 }

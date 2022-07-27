@@ -20,36 +20,40 @@ namespace Restourant.ViewModels
         public ICommand transition_second { get; set; }
 
         public ICommand transition_back { get; set; }
+        public ICommand payment { get; set; }
 
         private 
 
         DialogWindow dialogwindow;
         ChangeWindow changeWindow = new();
         SecondDishesViewModel secondDishesViewModel;
-        ApplicationContext db = new ApplicationContext();
 
         public DialogWindowViewModel(DialogWindow dialog)
         {
+            dialogwindow = dialog;
+
             transition_second = new RelayCommand(transition_secondCommandExecuted, transition_secondCommandExecute);
             transition_back = new RelayCommand(transition_backCommandExecuted, transition_backComandExecute);
-            dialogwindow = dialog;
-            var chose_Dish = db.Chose_Dish;
 
-            foreach (var item in chose_Dish)
+            payment = new RelayCommand(payment_CommandExecuted, payment_CommandExecute);
+
+            using (ApplicationContext db = new ApplicationContext())
             {
-                Foods.Add(new Chose_Dish
+                var chose_Dish = db.Chose_Dish;
+                foreach (var item in chose_Dish)
                 {
-                    Id = item.Id,
-                    Name = item.Name,
-                    Price = item.Price,
-                    Quantity = (int)item.Quantity,
-                    Total_price = item.Total_price,
-                });
-                Total_price += item.Total_price;
+                    Foods.Add(new Chose_Dish
+                    {
+                        Id = item.Id,
+                        Name = item.Name,
+                        Price = item.Price,
+                        Quantity = (int)item.Quantity,
+                        Total_price = item.Total_price,
+                    });
+                    Total_price += item.Total_price;
+                }
             }
         }
-
-
 
         private List<Chose_Dish> foods = new List<Chose_Dish>();
         public List<Chose_Dish> Foods
@@ -72,6 +76,15 @@ namespace Restourant.ViewModels
             set { Set(ref title_table, value); }
         }
 
+        private Visibility pay_visibility = Visibility.Hidden;
+
+        public Visibility payment_Visibility
+        {
+            get { return pay_visibility; }
+            set { Set(ref pay_visibility, value); }
+        }
+
+
 
         public void transition_secondCommandExecuted(object obj)
         {
@@ -92,6 +105,16 @@ namespace Restourant.ViewModels
 
         }
         public bool transition_backComandExecute(object obj)
+        {
+            return true;
+        }
+
+        private void payment_CommandExecuted(object obj)
+        {
+            payment_Visibility = Visibility.Visible;
+        }
+
+        private bool payment_CommandExecute(object arg)
         {
             return true;
         }
