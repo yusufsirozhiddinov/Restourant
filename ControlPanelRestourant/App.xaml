@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:ControlPanelRestourant"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <Style TargetType="DataGridCell">
+                <Style.Setters>
+                    <Setter Property="Width" Value="200"/>
+                    <Setter Property="FontSize" Value="30"/>
+                </Style.Setters>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

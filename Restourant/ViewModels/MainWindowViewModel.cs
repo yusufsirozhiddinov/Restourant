@@ -84,6 +84,10 @@ namespace Restourant.ViewModels
             get { return image; }
             set { Set(ref image, value); }
         }
+
+
+
+
         int indexOfTable = 1;
     }
 }

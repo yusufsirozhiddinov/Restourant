@@ -84,7 +84,12 @@ namespace Restourant.ViewModels
             set { Set(ref pay_visibility, value); }
         }
 
-
+        private string card_number = "XXXX XXXX XXXX XXXX";
+        public string Card_number
+        {
+            get { return card_number; }
+            set { Set(ref card_number, value); }
+        }
 
         public void transition_secondCommandExecuted(object obj)
         {
